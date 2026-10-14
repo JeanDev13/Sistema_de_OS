@@ -10,8 +10,6 @@ try{
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-} catch (PDOExeption $e){
+} catch (PDOException $e){
     die("Erro ao conectar ao banco de dados.");
 }
-
-?>

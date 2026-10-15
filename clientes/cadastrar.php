@@ -49,12 +49,14 @@
 </head>
 <body>
     <h1>Cadastrar Cliente</h1>
-    <?php if (!empty($erros)): ?>
-        <?php foreach ($erros as $erro): ?>
-            <div class="alert alert-danger" role ="alert">
-                <?= htmlspecialchars($erro) ?>
-            </div>
-        <?php endforeach; ?>
+    <?php if($count($erros) > 0): ?>
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                <?php foreach($erros as $erro): ?>
+                    <li><?= htmlspecialchars($erro)?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
     <?php endif; ?>
     <form action="cadastrar.php" method="POST">
         <div>
@@ -71,7 +73,7 @@
         </div>
         <div>
             <label for="email" class="form-label">E-mail</label>
-            <input class="form-control form-control-sm" type="email" name="email"  id="email" placeholder="Ex: joao@gamil.com">
+            <input class="form-control form-control-sm" type="email" name="email"  id="email" placeholder="Ex: joao@gmail.com">
         </div>
         <div>
             <label for="endereco" class="form-label">Endereço</label>
